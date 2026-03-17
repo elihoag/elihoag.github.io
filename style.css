@@ -1,0 +1,271 @@
+/* --- 1. GLOBAL STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- 2. Shared Naivgation --- */
+
+.gallery-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    background-color: #ffffff; 
+    z-index: 1000; 
+}
+
+.nav-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    letter-spacing: -1px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000; /* Ensured pure black */
+    margin-left: 30px;
+    font-size: 1.1rem;
+    font-weight: 700; /* Updated to match name's boldness */
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+    opacity: 1; /* Removes any graying effect in the default state */
+}
+
+.nav-links a:hover {
+    opacity: 0.5; /* Retains the visual feedback on hover */
+}
+
+/* --- 3. SPLASH PAGE (index.html) --- */
+.splash-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Restore your background image here */
+    background: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)), 
+                url('Splash_background.png') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+}
+
+.splash-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.splash-title {
+    font-size: 5rem;
+    font-weight: 700;
+    /* Tight initial spacing */
+    letter-spacing: 2px; 
+    text-transform: none;
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: pointer;
+}
+
+/* The hover effect on the name itself */
+.splash-link:hover .splash-title {
+    letter-spacing: 4px; /* The expansion as you hover */
+    opacity: 0.6; /* Subtle fade to signal it's clickable */
+}
+
+/* Ensure it stacks correctly on mobile */
+@media (max-width: 768px) {
+    .splash-title {
+        font-size: 3rem;
+        letter-spacing: -2px;
+    }
+}
+
+/* --- 4. FILM PAGE (gallery.html) --- */
+.project-room {
+    margin-top: 120px;
+    margin-bottom: 100px;
+    padding: 0 40px;
+}
+
+.video-link {
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.work-display {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.project-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.video-link:hover .project-video {
+    transform: scale(1.02);
+}
+
+.project-content {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: #333;
+}
+
+/* --- 5. PHOTOGRAPHY PAGE (photography.html) --- */
+.photo-grid-container {
+    margin-top: 140px;
+    padding: 0 40px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.photo-item {
+    overflow: hidden;
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
+}
+
+/* --- 6. CV PAGE (work.html) --- */
+.work-list-container {
+    margin-top: 140px;
+    padding: 0 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.work-section {
+    margin-bottom: 60px;
+}
+
+.section-header {
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: underline;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.work-row {
+    display: grid;
+    grid-template-columns: 80px 1fr; 
+    margin-bottom: 15px;
+}
+
+.work-year { font-weight: 400; color: #000; }
+.work-details { font-weight: 400; color: #202020; }
+.work-details strong { font-weight: 700; }
+.work-details em { font-style: italic; }
+
+/* --- 7. ABOUT PAGE (info.html) --- */
+.about-container {
+    margin-top: 150px;
+    display: flex;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 40px;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.about-image { flex: 0 0 40%; } /* 40% Width as requested */
+.about-text {
+    flex: 0 0 60%; 
+    padding-top: 150px;
+}  
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(15%);
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.email-display {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.email-display strong {
+    font-weight: 700; /* Bolding the word "email" */
+}
+
+.contact-info a {
+    display: inline-block;
+    margin-right: 25px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.contact-info a:hover {
+    opacity: 0.5; /* Keeps the visual feedback since the underline is gone */
+}
+
+/* --- 8. RESPONSIVE DESIGN (Mobile) --- */
+@media (max-width: 768px) {
+    .gallery-nav { padding: 20px; }
+    .nav-name { font-size: 1.4rem; }
+    .nav-links a { margin-left: 15px; font-size: 0.9rem; }
+
+    .about-container {
+        flex-direction: column;
+        margin-top: 100px;
+        gap: 40px;
+        padding: 0 20px;
+    }
+    .about-image, .about-text { flex: 0 0 100%; }
+    
+    .photo-grid { grid-template-columns: 1fr; }
+    .work-row { grid-template-columns: 60px 1fr; }
+    .splash-title { font-size: 2.5rem; }
+}
