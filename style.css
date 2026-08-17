@@ -148,6 +148,7 @@ body {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    font-size: 1.125rem; /* one step up from the inherited 1rem default; work-year/work-details pick this up automatically */
 }
  
 .work-section {
@@ -155,7 +156,7 @@ body {
 }
  
 .section-header {
-    font-size: 1rem;
+    font-size: 1.125rem; /* matches .work-list-container's new size, since this rule doesn't inherit it */
     font-weight: 700;
     text-decoration: underline;
     margin-bottom: 30px;
@@ -173,6 +174,28 @@ body {
 .work-details { font-weight: 400; color: #202020; }
 .work-details strong { font-weight: 700; }
 .work-details em { font-style: italic; }
+
+/* Role color-coding, ordered by importance (Director = most important
+   down to Production Assistant = least). Each color is written as
+   hsl(hue, saturation%, lightness%):
+     - hue picks the color family
+     - saturation and lightness control how "loud" or "quiet" it reads
+   Sound Designer and Sound Recordist echo Editor's and 1st AC's hues
+   at lower saturation, tuned to match the brighter palette below.
+   Camera Operator and Producer now sit on their own hue (red) rather
+   than echoing Director/DP -- flagged in chat in case that wasn't
+   intentional. Tweak any single number to retune that role alone. */
+.role-director        { color: hsl(328, 100%, 50%); }  /* hot pink -- most important */
+.role-dp               { color: hsl(100, 100%, 50%); }  /* highlighter green */
+.role-editor            { color: hsl(48, 100%, 64%); }   /* gold */
+.role-1st-ac            { color: hsl(275, 100%, 63%); }  /* purple */
+.role-writer             { color: hsl(25, 100%, 56%); }  /* orange */
+.role-colorist           { color: hsl(185, 73%, 47%); } /* teal */
+.role-camera-operator    { color: hsl(0, 100%, 70%); } /* light red/coral */
+.role-producer           { color: hsl(0, 51%, 30%); } /* dark maroon */
+.role-sound-designer     { color: hsl(48, 55%, 52%); }  /* mustard, brightened to match the new gold */
+.role-sound-recordist    { color: hsl(270, 50%, 70%); } /* lavender, brightened to match the new purple */
+.role-production-assistant { color: hsl(210, 15%, 65%); } /* faded slate blue -- restored, still the floor */
  
 /* --- 6. ABOUT PAGE (info.html) --- */
 .about-container {
